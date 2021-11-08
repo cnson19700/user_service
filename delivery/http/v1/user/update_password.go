@@ -1,4 +1,4 @@
-package auth
+package user
 
 import (
 	"errors"
@@ -6,14 +6,14 @@ import (
 	"github.com/cnson19700/pkg/apperror"
 	"github.com/cnson19700/pkg/utils"
 	"github.com/labstack/echo/v4"
-	"github.com/user_service/usecase/auth"
+	"github.com/user_service/usecase/user"
 )
 
-func (r *Route) Register(c echo.Context) error {
+func (r *Route) UpdatePassword(c echo.Context) error {
 	var (
 		ctx      = &utils.CustomEchoContext{Context: c}
 		appError = apperror.AppError{}
-		req      = auth.RegisterRequest{}
+		req      = user.UpdatePasswordRequest{}
 	)
 	if err := c.Bind(&req); err != nil {
 		_ = errors.As(err, &appError)
@@ -21,12 +21,12 @@ func (r *Route) Register(c echo.Context) error {
 		return utils.Response.Error(ctx, apperror.ErrInvalidInput(err))
 	}
 
-	res, err := r.authUseCase.Register(ctx, req)
+	err := r.userUseCase.UpdatePassword(ctx, req)
 	if err != nil {
 		_ = errors.As(err, &appError)
 
 		return utils.Response.Error(ctx, appError)
 	}
 
-	return utils.Response.Success(ctx, res)
+	return utils.Response.Success(ctx, req)
 }

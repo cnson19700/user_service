@@ -3,13 +3,11 @@ package http
 import (
 	"strings"
 
-	"github.com/user_service/config"
-	"github.com/user_service/delivery/http/v1/auth"
-
-	//"github.com/user_service/delivery/http/auth"
 	"github.com/cnson19700/pkg/middleware"
 	"github.com/labstack/echo/v4"
 
+	"github.com/user_service/config"
+	"github.com/user_service/delivery/http/v1/user"
 	"github.com/user_service/repository"
 	"github.com/user_service/usecase"
 )
@@ -57,7 +55,7 @@ func NewHTTPHandler(repo *repository.Repository, ucase *usecase.UseCase) *echo.E
 
 	apiV1 := e.Group("/v1")
 
-	auth.Init(apiV1.Group("/auth"), ucase)
+	user.Init(apiV1.Group("/users"), ucase)
 
 	return e
 }
