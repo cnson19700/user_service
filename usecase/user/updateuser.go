@@ -8,10 +8,10 @@ import (
 	"strings"
 
 	"github.com/cnson19700/pkg/middleware"
-	"github.com/user_service/model"
-	checkform "github.com/user_service/package/checkForm"
-	imgvalid "github.com/user_service/package/fileValid"
-	"github.com/user_service/util/myerror"
+	"github.com/cnson19700/user_service/model"
+	checkform "github.com/cnson19700/user_service/package/checkForm"
+	imgvalid "github.com/cnson19700/user_service/package/fileValid"
+	"github.com/cnson19700/user_service/util/myerror"
 )
 
 type UpdateRequest struct {

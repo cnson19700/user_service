@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/cnson19700/pkg/middleware"
-	"github.com/user_service/package/auth"
-	checkform "github.com/user_service/package/checkForm"
-	"github.com/user_service/util/myerror"
+	"github.com/cnson19700/user_service/package/auth"
+	checkform "github.com/cnson19700/user_service/package/checkForm"
+	"github.com/cnson19700/user_service/util/myerror"
 )
 
 type UpdatePasswordRequest struct {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/cnson19700/pkg/apperror"
 	"github.com/cnson19700/pkg/utils"
+	"github.com/cnson19700/user_service/usecase/user"
 	"github.com/labstack/echo/v4"
-	"github.com/user_service/usecase/user"
 )
 
 func (r *Route) UpdatePassword(c echo.Context) error {

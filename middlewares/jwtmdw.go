@@ -7,8 +7,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	"github.com/user_service/config"
-	"github.com/user_service/model"
+	"github.com/cnson19700/user_service/config"
+	"github.com/cnson19700/user_service/model"
 )
 
 type JwtCustomClaims struct {

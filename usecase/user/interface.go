@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 
-	"github.com/user_service/model"
+	"github.com/cnson19700/user_service/model"
 )
 
 type IUsecase interface {

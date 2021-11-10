@@ -1,9 +1,9 @@
 package user
 
 import (
+	"github.com/cnson19700/user_service/usecase"
+	"github.com/cnson19700/user_service/usecase/user"
 	"github.com/labstack/echo/v4"
-	"github.com/user_service/usecase"
-	"github.com/user_service/usecase/user"
 )
 
 type Route struct {

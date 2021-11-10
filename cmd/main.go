@@ -5,13 +5,13 @@ import (
 	"net"
 	"time"
 
-	"github.com/user_service/client/mysql"
-	"github.com/user_service/config"
-	"github.com/user_service/usecase"
+	"github.com/cnson19700/user_service/client/mysql"
+	"github.com/cnson19700/user_service/config"
+	"github.com/cnson19700/user_service/usecase"
 
-	serviceHttp "github.com/user_service/delivery/http"
-	"github.com/user_service/migration"
-	"github.com/user_service/repository"
+	serviceHttp "github.com/cnson19700/user_service/delivery/http"
+	"github.com/cnson19700/user_service/migration"
+	"github.com/cnson19700/user_service/repository"
 )
 
 func main() {
