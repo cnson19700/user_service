@@ -1,6 +1,5 @@
 module github.com/cnson19700/user_service
 
-// +heroku goVersion go1.17
 go 1.17
 
 require (
@@ -11,9 +10,9 @@ require (
 	github.com/labstack/echo/v4 v4.6.1
 	github.com/pkg/errors v0.9.1
 	github.com/pressly/goose v2.7.0+incompatible
-	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
-	gorm.io/driver/mysql v1.1.2
-	gorm.io/gorm v1.21.16
+	golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa
+	gorm.io/driver/mysql v1.1.3
+	gorm.io/gorm v1.22.2
 	gorm.io/plugin/dbresolver v1.1.0
 )
 
