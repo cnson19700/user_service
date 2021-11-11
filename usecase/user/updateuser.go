@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"strings"
 
+	checkform "github.com/cnson19700/auth_service/package/checkForm"
+	imgvalid "github.com/cnson19700/auth_service/package/fileValid"
 	"github.com/cnson19700/pkg/middleware"
 	"github.com/cnson19700/user_service/model"
-	checkform "github.com/cnson19700/user_service/package/checkForm"
-	imgvalid "github.com/cnson19700/user_service/package/fileValid"
 	"github.com/cnson19700/user_service/util/myerror"
 )
 

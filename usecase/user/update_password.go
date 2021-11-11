@@ -3,9 +3,9 @@ package user
 import (
 	"context"
 
+	"github.com/cnson19700/auth_service/package/auth"
 	"github.com/cnson19700/pkg/middleware"
-	"github.com/cnson19700/user_service/package/auth"
-	checkform "github.com/cnson19700/user_service/package/checkForm"
+	checkform "github.com/cnson19700/auth_service/package/checkForm"
 	"github.com/cnson19700/user_service/util/myerror"
 )
 
