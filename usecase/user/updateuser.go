@@ -9,9 +9,10 @@ import (
 
 	checkform "github.com/cnson19700/auth_service/package/checkForm"
 	imgvalid "github.com/cnson19700/auth_service/package/fileValid"
+	authError "github.com/cnson19700/auth_service/util/myerror"
 	"github.com/cnson19700/pkg/middleware"
 	"github.com/cnson19700/user_service/model"
-	"github.com/cnson19700/user_service/util/myerror"
+	userError "github.com/cnson19700/user_service/util/myerror"
 )
 
 type UpdateRequest struct {
@@ -24,7 +25,7 @@ func (u *Usecase) UpdateUser(ctx context.Context, req UpdateRequest) (*model.Use
 
 	user, err := u.userRepo.GetById(ctx, id)
 	if err != nil {
-		return &model.User{}, myerror.ErrGetUser(err)
+		return &model.User{}, userError.ErrGetUser(err)
 	}
 
 	if len(req.Form.Value["email"]) != 0 {
@@ -32,11 +33,11 @@ func (u *Usecase) UpdateUser(ctx context.Context, req UpdateRequest) (*model.Use
 		if user.Email != formEmail {
 			isMail, email := checkform.CheckFormatValue("email", formEmail)
 			if !isMail {
-				return &model.User{}, myerror.ErrEmailFormat(nil)
+				return nil, authError.ErrEmailFormat(nil)
 			}
 
 			if u.userRepo.CheckEmailExist(ctx, email) {
-				return nil, myerror.ErrEmailExist(nil)
+				return nil, authError.ErrEmailExist(nil)
 			}
 			user.Email = email
 		}
@@ -47,7 +48,7 @@ func (u *Usecase) UpdateUser(ctx context.Context, req UpdateRequest) (*model.Use
 		if user.Email != formName {
 			isName, fullname := checkform.CheckFormatValue("full_name", formName)
 			if !isName {
-				return &model.User{}, myerror.ErrFullNameFormat(nil)
+				return &model.User{}, authError.ErrFullNameFormat(nil)
 			}
 			user.FullName = fullname
 		}
@@ -58,7 +59,7 @@ func (u *Usecase) UpdateUser(ctx context.Context, req UpdateRequest) (*model.Use
 		if user.Email != formAge {
 			isAge, ageStr := checkform.CheckFormatValue("age", formAge)
 			if !isAge {
-				return &model.User{}, myerror.ErrAgeFormat(nil)
+				return &model.User{}, userError.ErrAgeFormat(nil)
 			}
 			age, _ := strconv.Atoi(ageStr)
 			user.Age = age
@@ -87,7 +88,7 @@ func (u *Usecase) UpdateUser(ctx context.Context, req UpdateRequest) (*model.Use
 
 	res, err := u.userRepo.Update(ctx, user)
 	if err != nil {
-		return &model.User{}, myerror.ErrUpdateUser(nil)
+		return &model.User{}, userError.ErrUpdateUser(nil)
 	}
 
 	return res, nil
