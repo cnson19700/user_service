@@ -1,44 +1,44 @@
 package authservice
 
-// import (
-// 	"fmt"
-// 	"log"
-// 	"os"
-// 	"time"
+import (
+	"fmt"
+	"log"
+	"os"
+	"time"
 
-// 	authServiceProto "github.com/cnson19700/auth_service/proto"
-// 	"github.com/pkg/errors"
-// 	"google.golang.org/grpc"
-// 	"google.golang.org/grpc/keepalive"
-// )
+	authServiceProto "github.com/cnson19700/auth_service/proto"
+	"github.com/pkg/errors"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/keepalive"
+)
 
-// var (
-// 	conn   *grpc.ClientConn
-// 	client authServiceProto.AuthServiceClient
-// )
+var (
+	conn   *grpc.ClientConn
+	client authServiceProto.AuthServiceClient
+)
 
-// func init() {
-// 	conn, err := grpc.Dial(
-// 		os.Getenv("ENDPOINT"),
-// 		grpc.WithInsecure(),
-// 		grpc.WithKeepaliveParams(keepalive.ClientParameters{
-// 			Time:                5 * time.Minute,
-// 			PermitWithoutStream: true,
-// 		}),
-// 	)
-// 	if err != nil {
-// 		log.Fatal(errors.Wrap(err, "fail to connect to grpc"))
-// 	}
+func init() {
+	conn, err := grpc.Dial(
+		os.Getenv("ENDPOINT"),
+		grpc.WithInsecure(),
+		grpc.WithKeepaliveParams(keepalive.ClientParameters{
+			Time:                5 * time.Minute,
+			PermitWithoutStream: true,
+		}),
+	)
+	if err != nil {
+		log.Fatal(errors.Wrap(err, "fail to connect to grpc"))
+	}
 
-// 	client = authServiceProto.NewAuthServiceClient(conn)
+	client = authServiceProto.NewAuthServiceClient(conn)
 
-// 	fmt.Println("Connected to auth-service")
-// }
+	fmt.Println("Connected to auth-service")
+}
 
-// func Close() {
-// 	conn.Close()
-// }
+func Close() {
+	conn.Close()
+}
 
-// func GetClient() authServiceProto.AuthServiceClient {
-// 	return client
-// }
+func GetClient() authServiceProto.AuthServiceClient {
+	return client
+}

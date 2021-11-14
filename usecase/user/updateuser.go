@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	checkform "github.com/cnson19700/auth_service/package/checkForm"
-	imgvalid "github.com/cnson19700/auth_service/package/fileValid"
+	checkform "github.com/cnson19700/book_service/package/checkForm"
+	imgvalid "github.com/cnson19700/book_service/package/fileValid"
 	authError "github.com/cnson19700/auth_service/util/myerror"
 	"github.com/cnson19700/pkg/middleware"
 	"github.com/cnson19700/user_service/model"
