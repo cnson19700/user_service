@@ -1,6 +1,7 @@
 module github.com/cnson19700/user_service
 
-go 1.16
+// +heroku goVersion go1.17
+go 1.17
 
 require (
 	github.com/cnson19700/auth_service v0.0.0-20211114030454-c5a85d117d0d
@@ -22,4 +23,31 @@ require (
 	golang.org/x/sys v0.0.0-20211113001501-0c823b97ae02 // indirect
 	google.golang.org/genproto v0.0.0-20211112145013-271947fe86fd // indirect
 	google.golang.org/grpc v1.42.0
+)
+
+require (
+	github.com/DataDog/datadog-go v4.8.2+incompatible // indirect
+	github.com/DataDog/sketches-go v1.2.0 // indirect
+	github.com/Microsoft/go-winio v0.5.0 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/getsentry/sentry-go v0.11.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/uuid v1.3.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.2 // indirect
+	github.com/labstack/gommon v0.3.0 // indirect
+	github.com/mattn/go-colorable v0.1.10 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/philhofer/fwd v1.1.1 // indirect
+	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/tinylib/msgp v1.1.6 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasttemplate v1.2.1 // indirect
+	golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa // indirect
+	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
+	gopkg.in/DataDog/dd-trace-go.v1 v1.34.0 // indirect
 )
