@@ -56,6 +56,16 @@ func ErrValidate(err error) apperror.AppError {
 	}
 }
 
+func ErrPassLength(err error) apperror.AppError {
+	return apperror.AppError{
+		Raw:       err,
+		ErrorCode: 100080,
+		HTTPCode:  http.StatusNotAcceptable,
+		Info:      "Password Length at least 8 characters",
+		Message:   "Password Length at least 8 characters",
+	}
+}
+
 func ErrToken(err error) apperror.AppError {
 	return apperror.AppError{
 		Raw:       err,

@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/cnson19700/auth_service/package/auth"
-	"github.com/cnson19700/pkg/middleware"
 	checkform "github.com/cnson19700/auth_service/package/checkForm"
+	"github.com/cnson19700/pkg/middleware"
 	"github.com/cnson19700/user_service/util/myerror"
 )
 
@@ -27,6 +27,9 @@ func (u *Usecase) UpdatePassword(ctx context.Context, req UpdatePasswordRequest)
 	isPass, newPass := checkform.CheckFormatValue("password", req.NewPass)
 	if !isPass {
 		return myerror.ErrPasswordFormat(nil)
+	}
+	if len(newPass) < 8 {
+		return myerror.ErrPassLength(nil)
 	}
 
 	isPass, oldPass := checkform.CheckFormatValue("password", req.Password)
